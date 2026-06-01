@@ -1,19 +1,27 @@
-import java.util.*;
-public class Test {
-    // Create a program that randomly picks one of 5 responses 
-    // ("Yes", "No", "Maybe", "Ask later", "Definitely") when the user types a question.
+import java.util.Random;
+import java.util.Scanner;
+/*
+Create a program that randomly picks one of 5 responses 
+("Yes", "No", "Maybe", "Ask later", "Definitely") when the user types a question.
+ */
+public class RandomAskAgain {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         Random random = new Random();
-        int response = random.nextInt(5)+1;
+        int response;
         String question;
         String askAgain = "yes";
-        System.out.println("Enter your question: ");
+        
         do{
+            System.out.println("Enter your question: ");
             question = sc.nextLine();
+            System.out.println("----------------------");
+            response = random.nextInt(5)+1;
+
             System.out.println("Your response = "+ question);
-            System.out.println("Comp");
+            System.out.print("Computer response: ");
+
             if(response == 1){
                 System.out.println("Yes");
             }else if(response == 2){
@@ -25,12 +33,13 @@ public class Test {
             }else{
                 System.out.println("Definitely");
             }
-            System.out.println("Do you want to ask again?");
-            askAgain = sc.nextLine().toLowerCase();
+            System.out.println("----------------------");
+            System.out.println("Do you want to ask again?(yes/no)");
+            askAgain = sc.nextLine();
+            System.out.println("----------------------");
             
-        }while(askAgain == "yes");
+        }while(askAgain.equalsIgnoreCase("yes"));
 
         sc.close();
     }
-    
 }
