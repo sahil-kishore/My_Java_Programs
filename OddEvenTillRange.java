@@ -9,12 +9,10 @@ public class OddEvenTillRange {
         System.out.println("Odds numbers: ");
         int i = 1;
         while(i < n){ //odd numbers
-            i++;
-            if(i % 2 == 0){
-                continue;
+            if(i % 2 != 0){
+                System.out.println(i);
             }
-            System.out.println(i);
-            
+            i++;
         }
 
         System.out.println("Even numbers: ");
