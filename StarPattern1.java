@@ -1,4 +1,4 @@
-public class StarPattern {
+public class StarPattern1 {
     /*
         * 
         * * 
