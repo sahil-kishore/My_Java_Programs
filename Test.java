@@ -4,32 +4,15 @@ public class Test {
     // ("Yes", "No", "Maybe", "Ask later", "Definitely") when the user types a question.
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        System.out.println("Enter two numbers: ");
+        int n1 =  sc.nextInt();
+        int n2 = sc.nextInt();
 
-        Random random = new Random();
-        int response = random.nextInt(5)+1;
-        String question;
-        String askAgain = "yes";
-        System.out.println("Enter your question: ");
-        do{
-            question = sc.nextLine();
-            System.out.println("Your response = "+ question);
-            System.out.println("Comp");
-            if(response == 1){
-                System.out.println("Yes");
-            }else if(response == 2){
-                System.out.println("No");
-            }else if(response == 3){
-                System.out.println("Maybe");
-            }else if(response == 4){
-                System.out.println("Ask Later!");
-            }else{
-                System.out.println("Definitely");
-            }
-            System.out.println("Do you want to ask again?");
-            askAgain = sc.nextLine().toLowerCase();
-            
-        }while(askAgain == "yes");
-
+        int sum = 0;
+        for(int i = n1 ; i <= n2 ; i++){
+            sum += i;
+        }
+        System.out.println("Sum of two numbers between " + n1 + " and " + n2 + " : " + sum);
         sc.close();
     }
     
